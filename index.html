@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ed">
+  <title>Florece · Un momento para tu memoria</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Florece, inicio"><span class="brand-mark">✿</span> florece<span class="brand-dot">.</span></a>
+    <div class="header-right"><span class="tagline">Un momento para tu memoria</span><button id="sound" class="icon-button" aria-label="Activar sonidos" aria-pressed="false">♫ <span>Sonido</span></button></div>
+  </header>
+  <main>
+    <div class="game-layout">
+      <aside class="journey">
+        <div class="section-label">TU CAMINO</div><div class="journey-heading"><h2>Un poquito más lejos</h2><span aria-hidden="true">🌱</span></div>
+        <p>Cada pareja es un pequeño logro.</p>
+        <div class="progress-label"><strong id="journey-count">0 de 24 niveles</strong><span id="journey-percent">0%</span></div>
+        <div class="progress-track" id="journey-progress" role="progressbar" aria-label="Niveles completados" aria-valuemin="0" aria-valuemax="24" aria-valuenow="0"><span id="journey-fill"></span></div>
+        <label class="compact-level-picker" for="level-select">Nivel <select id="level-select" aria-label="Elige tu nivel"></select></label>
+        <div class="levels-heading"><h3>Elige tu nivel</h3><span>24 aventuras</span></div><div id="levels" class="levels"></div>
+        <div class="level-legend"><span><i class="legend-done"></i> Completado</span><span><i class="legend-current"></i> Jugando</span></div>
+        <div class="little-note"><span aria-hidden="true">☀</span><p>Tu momento, tu ritmo.<br><strong>Lo estás haciendo bien.</strong></p></div>
+      </aside>
+      <section class="play-area" aria-label="Juego de encontrar parejas">
+        <div class="board-header"><div><div class="section-label" id="level-number">NIVEL 01 · PRIMEROS PASOS</div><h2 id="level-title">Las pequeñas alegrías</h2></div><span class="theme-icon" id="theme-icon" aria-hidden="true">🍒</span></div>
+        <div class="game-stats"><div><span class="stat-icon" aria-hidden="true">♡</span><strong id="pair-count">0 / 8</strong><span>parejas</span></div><div><span class="stat-icon" aria-hidden="true">↻</span><strong id="moves">0</strong><span>intentos</span></div><div class="no-rush"><span aria-hidden="true">☼</span> Sin límite de tiempo</div></div>
+        <p id="instruction" class="instruction">Pulsa una ficha y busca otra con el mismo dibujo.</p>
+        <div class="board-space"><div id="board" class="board" aria-label="Fichas del nivel"></div></div>
+        <div class="board-footer"><button id="hint" class="secondary-button"><span aria-hidden="true">✧</span> Ver una pista <span id="hint-count" class="hint-count">3</span></button><button id="restart" class="text-button"><span aria-hidden="true">↻</span> Volver a empezar</button></div>
+        <div class="live-message" id="live-message" role="status" aria-live="polite">¡Vamos a descubrir la primera pareja!</div>
+      </section>
+    </div>
+    <section class="how-to" aria-label="Cómo jugar"><div><span class="step-number">1</span><p><strong>Descubre</strong><br>Pulsa cualquier ficha.</p></div><span class="step-line"></span><div><span class="step-number">2</span><p><strong>Encuentra</strong><br>Busca su mismo dibujo.</p></div><span class="step-line"></span><div><span class="step-number">3</span><p><strong>¡Celebra!</strong><br>Cada pareja cuenta.</p></div></section>
+    <footer>Hecho para disfrutar, una pareja a la vez. <span aria-hidden="true">✿</span></footer>
+  </main>
+  <dialog id="win-dialog" aria-labelledby="win-title"><div class="win-flower" aria-hidden="true">🌻</div><div class="eyebrow">UN NUEVO LOGRO</div><h2 id="win-title">¡Qué buena memoria!</h2><p id="win-description"></p><button id="next-level" class="primary-button">Siguiente nivel <span aria-hidden="true">→</span></button><button id="play-again" class="text-button">Jugar este nivel otra vez</button><button id="close-win" class="text-button">Volver al tablero</button></dialog>
+  <div id="confetti" aria-hidden="true"></div>
+  <script src="game.js"></script>
+</body>
+</html>
